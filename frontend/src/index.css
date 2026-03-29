@@ -1,0 +1,26 @@
+:root {
+  --bg: #0d0d0d;
+  --surface: #161616;
+  --border: #2a2a2a;
+  --accent: #e8ff5a;
+  --accent-dim: rgba(232, 255, 90, 0.12);
+  --text: #f0f0f0;
+  --text-muted: #888;
+  --error: #ff5a5a;
+  --radius: 6px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  width: 380px;
+  min-height: 420px;
+}

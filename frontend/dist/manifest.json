@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "AgentFlow Assistant",
+  "version": "1.0.0",
+  "description": "AI-powered page analysis using LangGraph agents",
+  "permissions": ["activeTab", "scripting"],
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "AgentFlow Assistant"
+  },
+  "host_permissions": ["http://localhost:8000/*"]
+}
