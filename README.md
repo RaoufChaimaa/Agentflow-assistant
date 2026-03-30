@@ -49,8 +49,6 @@ Chrome Extension (React popup)
          ▼
    Ollama Local LLM
 
---- 
-
 ## Screenshots
 
 ### Popup UI
