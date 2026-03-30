@@ -31,6 +31,14 @@ The project demonstrates how LLM-powered workflows can be structured as an evalu
 
 ---
 
+## Screenshots
+
+### Popup UI
+![Popup UI](docs/screenshot-popup.png)
+
+### Result Example
+![Result Example](docs/screenshot-result.png)
+
 ## Architecture
 
 ```text
@@ -48,11 +56,3 @@ Chrome Extension (React popup)
     └────┬────┘
          ▼
    Ollama Local LLM
-
-## Screenshots
-
-### Popup UI
-![Popup UI](docs/screenshot-popup.png)
-
-### Result Example
-![Result Example](docs/screenshot-result.png)
