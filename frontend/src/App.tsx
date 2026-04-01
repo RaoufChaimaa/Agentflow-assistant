@@ -17,13 +17,23 @@ export default function App() {
   const [activeMode, setActiveMode] = useState<Mode | null>(null)
 
   const getPageText = async (): Promise<string> => {
-    if (typeof chrome !== 'undefined' && chrome.tabs) {
+    if (typeof chrome !== 'undefined' && chrome.tabs && chrome.scripting) {
       return new Promise((resolve) => {
-        chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-          if (!tabs[0]?.id) return resolve('')
+        chrome.tabs.query({ active: true, currentWindow: true }, (tabs: chrome.tabs.Tab[]) => {
+          if (!tabs[0]?.id) {
+            resolve('')
+            return
+          }
+
           chrome.scripting.executeScript(
-            { target: { tabId: tabs[0].id! }, func: () => document.body.innerText },
-            (results) => resolve(results?.[0]?.result ?? '')
+            {
+              target: { tabId: tabs[0].id },
+              func: () => document.body.innerText
+            },
+            (results) => {
+              const text = (results?.[0]?.result as string) ?? ''
+              resolve(text)
+            }
           )
         })
       })

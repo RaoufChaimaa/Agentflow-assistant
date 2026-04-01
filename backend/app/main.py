@@ -1,11 +1,11 @@
 from dotenv import load_dotenv
-load_dotenv()
-
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
-from .models import AnalyzeRequest, AnalyzeResponse
 from .agent import run_agent
+from .models import AnalyzeRequest, AnalyzeResponse
+
+load_dotenv()
 
 app = FastAPI(title="AgentFlow API", version="1.0.0")
 
